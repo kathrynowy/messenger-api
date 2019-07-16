@@ -1,0 +1,25 @@
+import * as mongoose from 'mongoose';
+import * as config from 'config';
+
+import * as path from 'path';
+import * as defaultConfig from '../../config/development.json';
+const dotenv = require('dotenv');
+
+
+
+const configDir = path.resolve(__dirname, '../../config');
+config.util.setModuleDefaults('NODE_ENV', config.util.loadFileConfigs(configDir));
+const dbConfig = config.get('NODE_ENV').dbConfig;
+
+const connectWithRetry = () => {
+  mongoose.connect(dbConfig.uri || defaultConfig.dbConfig.uri, { useNewUrlParser: true })
+    .then(async() => console.log('Connection to DB established successfully', dbConfig.uri))
+    .catch(error => {
+      console.log('Connection to DB failed', error);
+      setTimeout(connectWithRetry, 5000);
+    });
+};
+
+connectWithRetry();
+
+export default mongoose;

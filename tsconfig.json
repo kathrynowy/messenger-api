@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "experimentalDecorators": true,
+    "resolveJsonModule": true,
+    "outDir": "dist",
+    "sourceMap": true,
+    "lib": [ "dom","es2017" ]
+  },
+  "include": [
+    "src/**/*.ts", "server.ts", "index.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

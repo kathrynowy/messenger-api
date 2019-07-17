@@ -6,7 +6,7 @@ import mongoose from './src/context';
 
 
 const server = new http.Server(app);
-const port = process.env.PORT || 3200;
+const port = process.env.PORT || 8000;
 
 export const io = socket(server, {
   serveClient: false,

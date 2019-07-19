@@ -1,5 +1,5 @@
 {
   "dbConfig": {
-    "uri": "mongodb://localhost:27017/messenger-db"
+    "uri": "mongodb+srv://kathrynowy:katerina99@cluster0-lawht.mongodb.net/messenger?retryWrites=true"
   }
 }

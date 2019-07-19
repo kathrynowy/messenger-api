@@ -13,7 +13,9 @@ export const addDialogue: Controller = async(req, res, next) => {
 
 export const getDialogues: Controller = async(req, res, next) => {
   try {
-    res.json(await dialogueHelper.getAll());
+    const { userId } = req.query;
+
+    res.json(await dialogueHelper.getAll(userId));
   } catch (error) {
     next(error);
   }

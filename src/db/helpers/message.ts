@@ -5,10 +5,10 @@ const create = (data: MessageModel | any) => Message.create(data);
 
 const createAll = (data: MessageModel) => Message.insertMany(data);
 
-const getByUserId = (UserId: number) => Message.find({ User: UserId });
+const getAll = (dialogueId: number) => Message.find({ Dialogue: dialogueId });
 
 export default {
   create,
   createAll,
-  getByUserId
+  getAll
 };

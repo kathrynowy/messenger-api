@@ -4,8 +4,6 @@ import * as autoIncrement from 'mongoose-auto-increment';
 
 import * as path from 'path';
 import * as defaultConfig from '../../config/development.json';
-const dotenv = require('dotenv');
-
 
 
 const configDir = path.resolve(__dirname, '../../config');
@@ -14,7 +12,7 @@ const dbConfig = config.get('NODE_ENV').dbConfig;
 
 const connectWithRetry = () => {
   mongoose.connect(dbConfig.uri || defaultConfig.dbConfig.uri, { useNewUrlParser: true })
-    .then(async() => console.log('Connection to DB established successfully', dbConfig.uri,))
+    .then(async() => console.log('Connection to DB established successfully', dbConfig.uri))
     .catch(error => {
       console.log('Connection to DB failed', error);
       setTimeout(connectWithRetry, 5000);

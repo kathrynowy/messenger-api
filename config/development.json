@@ -1,5 +1,5 @@
 {
   "dbConfig": {
-    "uri": "mongodb://127.0.0.1/testdb"
+    "uri": "mongodb+srv://kathrynowy:katerina99@cluster0-lawht.mongodb.net/messenger?retryWrites=true"
   }
 }

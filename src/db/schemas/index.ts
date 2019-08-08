@@ -1,5 +1,5 @@
-import Message from './message';
 import Dialogue from './dialogue';
+import Message from './message';
 import User from './user';
 
 

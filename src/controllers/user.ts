@@ -1,11 +1,9 @@
+import { userHelper } from '../db/helpers';
 import { Controller } from '../types/controller';
-import { userHelper } from '../db/helpers'
 
 export const addUser: Controller = async(req, res, next) => {
   try {
-    const user = await userHelper.create(req.body);
-
-    res.json(user);
+    res.json(await userHelper.create(req.body));
   } catch (error) {
     next(error);
   }

@@ -1,9 +1,6 @@
 import * as express from 'express';
 
-import {
-  addDialogue,
-  getDialogues
-} from '../controllers/dialogue';
+import { addDialogue, getDialogues } from '../controllers/dialogue';
 
 
 export default express.Router()

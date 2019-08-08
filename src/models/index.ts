@@ -1,5 +1,5 @@
-import { MessageModel } from './message';
 import { DialogueModel } from './dialogue';
+import { MessageModel } from './message';
 import { UserModel } from './user';
 
 

@@ -26,4 +26,5 @@ const dialogueSchema = new Schema({
 
 dialogueSchema.plugin(autoIncrement.plugin, { model: 'dialogue', field: 'DialogueId', startAt: 1 });
 
+
 export default mongoose.model<DialogueModel>('dialogue', dialogueSchema);

@@ -20,4 +20,5 @@ const userSchema = new Schema({
 
 userSchema.plugin(autoIncrement.plugin, { model: 'user', field: 'UserId', startAt: 1 });
 
+
 export default mongoose.model<UserModel>('user', userSchema);

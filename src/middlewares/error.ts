@@ -3,6 +3,8 @@ import * as _ from 'lodash';
 
 import { ErrorController } from '../types/error-controller';
 
+
+/* tslint:disable:no-console */
 const errorHandler: ErrorController = (error, req, res, next) => {
   console.log(error.stack || error.message || error);
 

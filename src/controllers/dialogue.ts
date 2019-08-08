@@ -1,5 +1,6 @@
+import { dialogueHelper } from '../db/helpers';
 import { Controller } from '../types/controller';
-import { dialogueHelper } from '../db/helpers'
+
 
 export const addDialogue: Controller = async(req, res, next) => {
   try {

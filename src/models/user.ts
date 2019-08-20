@@ -1,9 +1,11 @@
 import mongoose from '../context';
-import { DialogueModel } from './dialogue';
+import { ChatModel } from './chat';
 
 
 export interface UserModel extends mongoose.Document {
-  Dialogues: DialogueModel[];
-  Username: string;
-  UserId: number;
+  chats: ChatModel[];
+  username: string;
+  userId: number;
+  password: string;
+  validPassword(password: string): any;
 }

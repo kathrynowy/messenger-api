@@ -3,7 +3,6 @@ import * as express from 'express';
 
 import middlewares from './src/middlewares';
 
-
 const app = express();
 
 const result = env.config({path: `${__dirname}/.env`});

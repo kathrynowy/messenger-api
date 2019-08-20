@@ -1,10 +1,10 @@
-import { DialogueModel } from './dialogue';
+import { ChatModel } from './chat';
 import { MessageModel } from './message';
 import { UserModel } from './user';
 
 
 export {
   MessageModel,
-  DialogueModel,
+  ChatModel,
   UserModel
 };

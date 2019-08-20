@@ -2,11 +2,11 @@ import { MessageModel } from '../../models';
 import { Message } from '../schemas';
 
 
-const create = (data: MessageModel | any) => Message.create(data);
+const create = (data: MessageModel) => Message.create(data);
 
 const createAll = (data: MessageModel) => Message.insertMany(data);
 
-const getAll = (dialogueId: number) => Message.find({ Dialogue: dialogueId });
+const getAll = (chat: number) => Message.find({ chat });
 
 
 export default {

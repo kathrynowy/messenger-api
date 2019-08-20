@@ -6,8 +6,13 @@ const create = (data: UserModel | any) => User.create(data);
 
 const getAll = () => User.find({});
 
+const checkUserExistence = (username: string) => User.find({ username });
+
+const getById = (id: string) => User.findById(id);
 
 export default {
   create,
-  getAll
+  checkUserExistence,
+  getAll,
+  getById
 };

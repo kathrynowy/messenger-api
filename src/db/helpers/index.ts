@@ -1,4 +1,4 @@
-import dialogueHelper from './dialogue';
+import chatHelper from './chat';
 import messageHelper from './message';
 import userHelper from './user';
 
@@ -6,5 +6,5 @@ import userHelper from './user';
 export {
   messageHelper,
   userHelper,
-  dialogueHelper
+  chatHelper
 };

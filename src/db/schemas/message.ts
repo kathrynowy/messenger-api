@@ -7,26 +7,26 @@ import { MessageModel } from '../../models/message';
 const Schema = mongoose.Schema;
 
 const messageSchema = new Schema({
-  Dialogue: {
+  chat: {
     type: Schema.Types.ObjectId,
-    ref: 'dialogue'
+    ref: 'chat'
   },
-  Text: {
+  text: {
     type: String,
     required: [true, 'Message text is required']
   },
-  User: {
+  user: {
     type: Schema.Types.ObjectId,
     ref: 'user'
   },
-  Time: {
+  time: {
     type: Number,
     required:  [true, 'Message time is required']
   },
-  MessageId: Number
+  messageId: Number
 }, { versionKey: false });
 
-messageSchema.plugin(autoIncrement.plugin, { model: 'message', field: 'MessageId', startAt: 1 });
+messageSchema.plugin(autoIncrement.plugin, { model: 'message', field: 'messageId', startAt: 1 });
 
 
 export default mongoose.model<MessageModel>('message', messageSchema);

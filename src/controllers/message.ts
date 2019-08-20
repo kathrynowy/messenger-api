@@ -11,9 +11,9 @@ export const addMessage: Controller = async(req, res, next) => {
 
 export const getMessages: Controller = async(req, res, next) => {
   try {
-    const { dialogueId } = req.query;
+    const { chatId } = req.query;
 
-    res.json(await messageHelper.getAll(dialogueId));
+    res.json(await messageHelper.getAll(chatId));
   } catch (error) {
     next(error);
   }

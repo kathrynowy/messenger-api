@@ -1,9 +1,13 @@
-import { messageHelper } from '../db/helpers';
+import { chatHelper, messageHelper } from '../db/helpers';
 import { Controller } from '../types/controller';
 
 export const addMessage: Controller = async(req, res, next) => {
   try {
-    res.json(await messageHelper.create(req.body));
+    const message = await messageHelper.create(req.body);
+
+    await chatHelper.updateLastMessage(message);
+
+    res.json(message);
   } catch (error) {
     next(error);
   }

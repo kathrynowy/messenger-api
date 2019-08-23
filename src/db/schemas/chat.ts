@@ -21,7 +21,15 @@ const chatSchema = new Schema({
     },
     required: [true, 'Participants are required']
   },
-  chatId: Number
+  chatId: Number,
+  lastMessageText: {
+    type: String,
+    default: ''
+  },
+  lastMessageTime: {
+    type: String,
+    default: ''
+  }
 }, { versionKey: false });
 
 chatSchema.plugin(autoIncrement.plugin, { model: 'chat', field: 'chatId', startAt: 1 });

@@ -10,6 +10,7 @@ const checkUserExistence = (username: string) => User.find({ username });
 
 const getById = (id: string) => User.findById(id);
 
+
 export default {
   create,
   checkUserExistence,

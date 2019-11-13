@@ -7,7 +7,7 @@ import { addUserId, sendMessage } from './src/socket';
 
 
 const server = new http.Server(app);
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 7000;
 const users = [];
 
 export const io = socketIo(server, {

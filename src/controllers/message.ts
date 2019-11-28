@@ -6,6 +6,7 @@ export const addMessage: Controller = async(req, res, next) => {
     const message = await messageHelper.create(req.body);
 
     await chatHelper.updateLastMessage(message);
+    await messageHelper.readMessages(req.body.user, req.body.chat);
 
     res.json(message);
   } catch (error) {

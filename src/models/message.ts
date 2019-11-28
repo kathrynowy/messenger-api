@@ -8,4 +8,6 @@ export interface MessageModel extends mongoose.Document {
   user: UserModel;
   time: number;
   messageId: number;
+  isRead: boolean;
+  isDeleted: boolean;
 }

@@ -23,7 +23,15 @@ const messageSchema = new Schema({
     type: Number,
     required:  [true, 'Message time is required']
   },
-  messageId: Number
+  messageId: Number,
+  isRead: {
+    type: Boolean,
+    default: false
+  },
+  isDeleted: {
+    type: Boolean,
+    default: false
+  }
 }, { versionKey: false });
 
 messageSchema.plugin(autoIncrement.plugin, { model: 'message', field: 'messageId', startAt: 1 });

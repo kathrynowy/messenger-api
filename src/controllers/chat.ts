@@ -1,5 +1,6 @@
-import { chatHelper } from '../db/helpers';
+import { chatHelper, messageHelper } from '../db/helpers';
 import { Controller } from '../types/controller';
+import { ApiChatResponse } from './../models/chat-response';
 
 
 export const addChat: Controller = async(req, res, next) => {
@@ -21,8 +22,16 @@ export const addChat: Controller = async(req, res, next) => {
 export const getChats: Controller = async(req, res, next) => {
   try {
     const { userId } = req.query;
+    const chats = await chatHelper.getAll(userId);
+    const response = [];
 
-    res.json(await chatHelper.getAll(userId));
+    for (const chat of chats) {
+      const unread = await messageHelper.getUnreadMessages(chat._id, userId);
+
+      response.push(new ApiChatResponse(unread.length, chat));
+    }
+
+    res.json(response);
   } catch (error) {
     next(error);
   }

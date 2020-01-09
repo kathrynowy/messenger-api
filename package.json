@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "nodemon --exec ts-node index.ts",
     "build": "npx tsc",
+    "debug": "nodemon --exec node --inspect=0.0.0.0:9229 -r ts-node/register ./index.ts",
     "start": "node dist/index.js",
     "tslint": "tslint -p tsconfig.json -c tslint.json",
     "tslint-fix": "tslint --fix -p tsconfig.json -c tslint.json"

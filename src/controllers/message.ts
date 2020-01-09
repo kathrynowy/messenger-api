@@ -14,9 +14,27 @@ export const addMessage: Controller = async(req, res, next) => {
   }
 };
 
+export const readMessages: Controller = async(req, res, next) => {
+  try {
+    const { user, chat } = req.body;
+
+    res.json(await messageHelper.readMessages(user, chat));
+  } catch (error) {
+    next(error);
+  }
+};
+
 export const getMessages: Controller = async(req, res, next) => {
   try {
-    const { chatId } = req.query;
+    const { chatId, user, isNeededToReadMessages } = req.query;
+
+    if (!chatId || chatId === 'undefined') {
+      throw new Error();
+    }
+
+    if (isNeededToReadMessages) {
+      await messageHelper.readMessages(user, chatId);
+    }
 
     res.json(await messageHelper.getAll(chatId));
   } catch (error) {

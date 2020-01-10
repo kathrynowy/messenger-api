@@ -1,10 +1,10 @@
 import mongoose from '../context';
-import { MessageModel } from './message';
 import { Participants } from './participants';
 
 
 export interface ChatModel extends mongoose.Document {
-  chat: number;
+  chatId: number;
   participants: Participants;
-  lastMessage: MessageModel;
+  lastMessageText: string;
+  lastMessageTime: string;
 }
